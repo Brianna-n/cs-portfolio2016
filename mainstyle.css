@@ -1,0 +1,46 @@
+
+
+#navbar {
+    background-color: PeachPuff;
+    text-align: center;
+    
+}
+
+#navbar li {
+    display:inline-block;
+    font-size: 20px;
+    font-family: fantasy; 
+    padding: 15px;
+    background-color: antiquewhite;
+    border-radius: 25px;
+
+}
+
+a:link {
+    color: darksalmon;
+}
+a:visited {
+    color: darksalmon;
+}
+    
+    a:hover {
+    color: white;
+}
+
+a:active {
+    color: linen;
+}
+
+
+
+.slant-text {
+    font-style: italic;
+}
+
+.darksalmon {
+    color: darksalmon;
+}
+
+.gray-text {
+    color: gray;
+}
