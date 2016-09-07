@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <html>
+    <head>
+        <title> </title>
+            <link rel="stylesheet" href="mainstyle.css"> </li>
+            <style> 
+            body {
+                background:#fcf4e8;
+            
+            cursor:url(http://cur.cursors-4u.net/nature/images10/nat985.png), auto
+            }
+            </style>
+    </head>
+    <body>
+<!-- navbar starts here -->
+<ul id="navbar">
+    <li> <a href="index.html"> About Me </a></li>
+    <li> <a href="hardware.html"> Hardware </a></li>
+    <li> <a href="#"> Calculator </a></li>
+    <li> <a href="#"> To-do List </a></li>
+    <li> <a href="#"> Vindinium </a></li>
+    <li> <a href="#"> Big Project </a></li>
+    <li> <a href="Howto.html"> How To</a></li>
+    
+    
+</ul>
+<!-- navbar ends here -->
+
+<font size="7" class="darksalmon slant-text">How to Construct this Website</font>
+
+
+<code> 
+<pre>
+<p class="gray-text">First create a navbar by putting links with:
+
+&lt;li&gt; &lt;a href=&rdquo;insert link&rdquo;&gt; Text you want the link to appear as&lt;/li&gt; 
+	
+	I simply linked my first button in my navbar to the current page I was working<br> on and called it About Me and added other buttons (hardware, calculator, to-do list, <br> vindinium, big project) put a # in place of the links I didn&rsquo;t yet have. Next I created <br>a 
+separate style page and linked it back to the original page with &lt;link rel=&quot;stylesheet&quot; href=&quot;mainstyle.css&quot;&gt; &lt;/li&gt; <br> on the head of the original page and then one the style page I created a 
+
+#navbar {
+}
+
+To add my background color to the navbar, use the code background-color: PeachPuff; <br>then to center the links use text-align: center; between the brackets of the navbar hashtag.<br> Next, I lined up the links next to each other. So in the style page, make:
+
+#navbar li {
+}
+
+And add to in between the brackets: display: inline-block; to make the links line up. Then<br> change the font size to 20 pixels with font-size; 20px; put that between the brackets as well. <br>To space out the buttons, add between the brackets padding: 15px; Then add a background color <br>for the buttons, I used between the brackets background-color: antiquewhite; and to round out the buttons<br> I added between the brackets border-radius: 25px. To change the color of the links, use <br>a:link { color: darksalmon; } and a:visited { color: darksalmon; }<br> Having the links change color and grow when hovered over can be used with <br>a:hover { font-size:25px;color: white;} and a{color: darksalmon; font-size: 20px; -webkit-transition: all 1s linear; } <br>By now, it should look like this while your cursor hovers over the about me page. 
+
+<img src="navbar" alt="navbar">
+<br>
+Now click away from the style page back to your original page and create a table like this
+
+&lt;table style=&quot;width:50%&quot;&gt;
+ &lt;tr&gt;
+ &lt;th&gt;ABOUT THE CREATOR&lt;/th&gt;
+&lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt; Insert description. &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+To keep the paragraphs in a section instead of all the way across the page, make sure the table width is 50%. Next I added a break &lt;br&gt; and created a second table 
+
+&lt;th&gt;LIKES&lt;/th&gt;
+&lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt; Brianna has many likes but two examples of these are Lolita/Kawaii Fashion and crafting &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+  &lt;td&gt;Lolita, Kawaii, etc Fashion (or whatever you want):&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;td&gt;Insert description
+&lt;/td&gt;
+&lt;td&gt; &lt;img src=&quot;Insert image link relating to likes&quot; alt=&quot;Whatever&quot; style=&quot;width:200px&quot;&gt;&lt;/td&gt;
+&lt;tr&gt;
+&lt;td&gt;Crafting (or whatever you want)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;Insert description
+&lt;/td&gt;
+&lt;td&gt; &lt;img src=&quot;Insert image link relating to likes&quot; alt=&quot;whatever&quot; width=&quot;200x&quot;&gt; &lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+<br>Separated it with a break and then a third table 
+
+&lt;table style=&quot;width:50%&quot;&gt;
+ &lt;tr&gt;
+ &lt;th&gt;MAIN HOBBY: DRAWING(or whatever you want)&lt;/th&gt;
+&lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt; Insert description
+ &lt;/td&gt;
+ &lt;td&gt; &lt;img src=&quot;image link&quot; alt=&quot;whatever&quot; style=&quot;width:200;&quot;&gt; &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+This way your images will be next to your paragraphs. To change the color and format of texts in this page,<br> go back to your style page and create a class such as these:
+
+.slant-text {
+    font-style: italic;
+}
+
+.darksalmon {
+    color: darksalmon;
+}
+
+.gray-text {
+    color: gray;
+}
+
+These were the classes I used. Then insert in the table header the class like this:<br> &lt;th class=&rdquo;darksalmon&rdquo;&gt;ABOUT THE CREATOR&lt;/th&gt;. Insert the &ldquo;darksalmon&rdquo; class in your <br>other table headers. Plus add this class as well as the &ldquo;slant-text&rdquo; class<br> to &lt;td&gt;Lolita, Kawaii, etc Fashion (or whatever you want):&lt;/td&gt; and &lt;td&gt;Crafting (or whatever you want)&lt;/td&gt;. <br>Then add the &ldquo;gray-text&rdquo; class to the descriptions in the table. Now your About Me page is<br> finished and should look very similar to mine aside from the background color and the cursor.<br> Add a style tag in the head of the page and insert a &ldquo;body&rdquo;css. Then add your background color <br>and custom cursor like this 
+&lt;style&gt; 
+
+body {
+                background:#fcf4e8;
+            
+            cursor:url(image used for custom cursor), auto
+            }
+ &lt;/style&gt;
+
+Now your About Me page is completely finished. 
+
+Next create a new page and insert the link to your new page in your navbar and name it Hardware. <br>Copy and paste your entire head and navbar onto your new page. Make sure to save when copy<br> and pasting big chunks of text. Then make a div with &lt;div&gt;&lt;/div&gt; and in between these<br> tags, create the header for your page using &lt;h1&gt; Hardware of the Computer/Your title&lt;/h1&gt; and add <br>the &ldquo;darksalmon&rdquo; class. Then add an image of a motherboard as the first term for your hardware page,<br> then add a break and type out &ldquo;Motherboard&rdquo;. To make it more distinguishable from the definition, put<br> the word between &lt;font size=&rdquo;5&rdquo;&gt; &lt;font&gt; and add the &ldquo;darksalmon&rdquo; and &ldquo;slant-text&rdquo; classes to that.<br> Put in another break and between &lt;p&gt; &lt;/p&gt; tag add your definition of motherboard. Then put a break.<br> Repeat this with the rest of your hardware parts. Then go back to your style page and create<br> a &ldquo;div&rdquo;css and center your paragraphs in your hardware page like this 
+div {
+    margin: auto;
+    width: 50%;
+    padding:10px;
+    text-align: center;
+}
+
+I had tried using a table to keep the text in a section rather than having it spread across the entire <br>page. However, it wouldn&rsquo;t center how I wanted it to so I used a div instead.Once that is done, you are <br>done with your hardware page. 
+
+
+
+
+
+
+</p>
+</pre>
+</code>
+
+    </body>
+</html>
