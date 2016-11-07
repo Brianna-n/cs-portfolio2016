@@ -6,8 +6,7 @@
             <link rel="stylesheet" href="mainstyle.css"> </li>
             <style> 
             body {
-               
-            
+                background:#fcf4e8;
             
             </style>
 </head>
@@ -24,13 +23,34 @@
     
 </ul>
 
-
-
-   <input id="bgColor">
-<button id="colorButton"> Change Color!</button>
-
+<h1 class="darksalmon">Calculator</h1>
+ <div class="modify">  <input id="bgColor">
+<button id="colorButton" class="colorButton round"> Change Color!</button>
+</div>
     
     
+
+<br>
+
+
+<div class="modify">
+<input id="numberInput">
+
+      <select id="operations" class="colorButton round">
+    <option>+</option>
+    <option>-</option>
+    <option>*</option>
+    <option>/</option>
+    <option>^</option>
+    <option>√</option>
+    </select> 
+    
+<input id="numberInput2">
+<button id="equals" class ="colorButton round">=</button>
+</div> 
+
+<div class="modify" id="displayAnswer"></div>
+
 <script src="changer.js"></script>
 </body>
 </html>

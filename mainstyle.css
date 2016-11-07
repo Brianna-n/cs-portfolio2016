@@ -20,13 +20,15 @@ h1 {
     text-align: center;
 }
 
- div {
+ .modify {
     margin: auto;
     width: 50%;
     padding:10px;
     text-align: center;
     padding: 75px;
 }
+
+
 
 a:link {
     color: darksalmon;
@@ -65,4 +67,20 @@ a:active {
 
 .gray-text {
     color: gray;
+}
+
+.colorButton {
+    background-color: PeachPuff;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.round {
+    border-radius: 25px;
+    color: white;
+    font-size: 25px;
 }
