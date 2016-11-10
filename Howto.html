@@ -27,7 +27,7 @@
 </ul>
 <!-- navbar ends here -->
 
-<font size="7" class="darksalmon slant-text">How to Construct this Website</font>
+<font size="7" class="darksalmon slant-text">How to Construct the Hardware Page</font>
 
 
 <code> 
@@ -132,15 +132,39 @@ div {
 }
 
 I had tried using a table to keep the text in a section rather than having it spread across the entire <br>page. However, it wouldn&rsquo;t center how I wanted it to so I used a div instead.Once that is done, you are <br>done with your hardware page. 
-
-
-
-
-
-
 </p>
 </pre>
 </code>
+
+<font size="7" class="darksalmon slant-text">How to Construct the Calculator</font>
+
+<p class="gray-text">This calculator will need two pages for it, an HTML page and a JS page. First, make an input to put the numbers in for the calculator and name it with an ID something like, &ldquo;numberInput&rdquo;. Make sure it is in camelcase which means the first word starts with a lowercase letter while the following words start with capital letters. 
+
+
+	Then make a dropdown for the operations for the calculator with the &lt;select&gt;&lt;/select&gt; tag and give it an ID name like &ldquo;operations&rdquo;. You will need 6 options inside the select tag which will be +,-,*, /, ^ and &radic;. After that, make another input and give it an ID like &ldquo;numberInput2&rdquo;. Then make a button with the button tag &lt;button&gt;&lt;/button&gt; This will be the button that solves the equation typed into the inputs. Give it an ID with camelcase. After that make a div and give it an ID where you can display the answer to the equation. Make sure you put a script tag at the bottom of the page, right above the &lt;/body&gt; tag and link it to the Javascript page. 
+<br>
+<img src="calc" alt ="operations">
+<br>
+
+Then go to your JS page. Make your elements in your HTML page into variables like this: 
+
+
+Below that, take the variable for your solve button, I named mine &ldquo;equals&rdquo; and then give it an add event listener that responds to a click. Then instead of function, put solve and define the function solve below. Since there are 6 operations there needs to be 6 if statements. One for each operation. Fill them out like this
+
+<br>
+
+<img src="calculator" alt="calculator">
+
+<br>
+
+
+And then you&rsquo;re done. 
+
+
+</p>
+
+
+
 
     </body>
 </html>
