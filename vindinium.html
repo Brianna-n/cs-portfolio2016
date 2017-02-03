@@ -1,0 +1,259 @@
+<html>
+    <head>
+        <title> </title>
+            <link rel="stylesheet" href="mainstyle.css"> </li>
+            <style> 
+            body {
+                background:#fcf4e8;
+            
+            cursor:url(http://cur.cursors-4u.net/nature/images10/nat985.png), auto
+            }
+            </style>
+    </head>
+    
+   
+    
+    <ul id="navbar">
+    <li> <a href="index.html"> About Me </a></li>
+    <li> <a href="hardware.html"> Hardware </a></li>
+    <li> <a href="changer.html"> Calculator </a></li>
+    <li> <a href="todo.html"> To-do List </a></li>
+    <li> <a href="vindinium.html"> Vindinium </a></li>
+    <li> <a href="#"> Big Project </a></li>
+    <li> <a href="Howto.html"> How To </a> </li>
+    
+</ul>
+
+
+
+<br> 
+ <h1 class="darksalmon">Vindinium</h1> 
+ 
+ <div class="modify"> 
+ 
+ <img src="http://stratosprovatopoulos.com/wp-content/uploads/2014/02/screenshot.png"
+ width=500px>
+     
+     <p class="darksalmon slant-text"> The Game
+     </p>
+
+     <p class="gray-text"> Vindinium is a multi-player game in which 
+     the goal of the game is to have to most gold at the end of the game.
+     The game consists of 1200 turns. The way to obtain gold in through 
+     mines. The mines are guarded by goblins which the player has to attack
+     the goblin in order to claim the mind, thus, losing health. However 
+     a mine is claimed, the player gets one gold each turn from each of the 
+     mines they have claimed. 
+    
+    <br>
+    
+Another way to earn gold is if one kills an opposing player. If the opposing
+player dies, they will respawn but all their mines will belong to the killer. 
+But a player can heal before they die at a tavern. However, the tavern costs 2 
+gold to use. The only way the bots can be controlled is through coding their 
+commands. 
+     </p>
+    
+ </div>
+ 
+ <hr/>
+ 
+ <div>
+     <h1 class="darksalmon">The Code</h1>
+     <p class="darksalmon slant-text">
+       // Creating variables//</p> <br/><br/>
+       <p class="gray-text"> var Bot = require('bot');<br/>var PF = require('pathfinding');<br/><br/></p>
+      <p class="darksalmon slant-text">//this is what lets the bot run in the game//</p><br/><br/><br/>
+     <p class="gray-text"> //var bot = new Bot('yxpeyqar', 'training', 'http://vindinium.org'); 
+     <br/>var bot = new Bot('onweli3l', 'arena', 'http://52.39.33.197:9000');</p>
+     
+     This code lets the bot run in a server. The first line, when uncommented,
+    allows the bot to run against <br> other computer controlled bot as a test. The 
+    second line allows your bot to run in a server against <br>other bots programmed
+    by real people. 
+
+    
+     <p class="darksalmon slant-text"><br/>//more Varaibles//</p>
+     
+     <br/><br/><p class ="gray-text"></a>>var goDir;<br/>var Promise = require('bluebird');<br/>Bot.prototype.botBrain = function() {<br/>    return new Promise(function(resolve, reject) {<br/>        _this = bot</p>
+         
+ </div>
+ <div>
+     
+     <p class="darksalmon slant-text"></a> // Set myDir to what you want and it will set bot.goDir to that direction at the end.  Unless it is &quot;none&quot;// </p> 
+      
+      <p class="gray-text"></a>><br/>   
+      var myDir;<br/>     
+      var myPos = [bot.yourBot.pos.x, bot.yourBot.pos.y];<br/>    
+      <br/>      
+      </p>
+      
+     <p class="darksalmon slant-text"> //Creating Enemies into Variables//<br/><br/>    </p>
+     
+     <p class = "gray-text">
+      var enemyBots = [];<br/>        if (bot.yourBot.id != 1) enemyBots.push(bot.bot1);<br/>  
+      if (bot.yourBot.id != 2) enemyBots.push(bot.bot2);<br/>      
+      if (bot.yourBot.id != 3) enemyBots.push(bot.bot3);<br/>    
+      if (bot.yourBot.id != 4) enemyBots.push(bot.bot4);<br/><br/> </p>
+      \
+      The if statements basically say that if your bot is not one of these 
+      numbers, then the enemby bots are <br> assigned to those numbers. If your bot
+      is not Bot 1, then your evemy is. 
+      <br><br>
+      
+      
+      <p class="darksalmon"> /*                                      *
+         * This Code Decides WHAT to do         *
+         *                                      */
+      </p>
+      <br><br>
+      
+      <p class="darksalmon slant-text">//Tells the code to find enemies// </p> <br/>    
+      
+      <p class="gray-text">
+      var closestEnemy = enemyBots[0];<br/>       
+      for (i = 0; i &lt; bot.enemyBots.length; i++) {<br/>   
+      if (bot.findDistance(myPos, closestEnemy.posArray) &gt; bot.findDistance(myPos, bot.enemyBots[i])) {<br/>  
+      closestEnemy = bot.enemyBots[i];<br/>       
+      }<br/>        }
+      
+     </p>
+     
+     The for loop in this section puts all the enemy bots into an array. Then it finds which of the bots are the<br> closest to your own bot. 
+    
+    
+    <br><br>
+     
+    <p class="darksalmon slant-text"> //Finds enemy mines//<br/><br/>   </p>     
+     
+    <p class="gray-text"> var enemyMines = enemyBots[0].mines;<br/>        
+     
+     enemyMines = enemyMines.concat(enemyBots[1].mines);<br/>        enemyMines = enemyMines.concat(enemyBots[2].mines);<br/><br/>        console.log(enemyMines);
+     
+     </p>
+     
+     <br><br>
+     
+     This code puts all enemy mines into an array. "Concat" means concatenate which means to lay from end to end. <br><br>
+     
+     
+     <p class="darksalmon slant-text">//Gives the bots priorities on what to do in the game//<br/></p>
+     
+     
+     <p class="gray-text">
+     <br/>        var task;<br/>          if (bot.findDistance(myPos, closestEnemy.posArray) &lt; 4) {<br/>            task = &quot;hurtPeople&quot;;<br/>        }<br/>        else if (bot.yourBot.life &lt; 50) {<br/>            task = &quot;taverns&quot;;<br/>        }<br/>        else {<br/>            task = &quot;freeMines&quot;;<br/>        }<br/>
+     </p>
+     
+     This code sets up an if/elseif/else statement to give the bot priorities in this game. The first if statement has <br>the condition that if an enemy bot is 4 steps away, your bot will attack it.The elseif statement has the condition<br> that if the bot's life is less than 50 and there are no enemies nearby, the bot will go to a tavern to heal.<br> Finally, if the bot's health is above 50 and there are no enemies nearby, the bot will take free mines. 
+     
+     <br><br>
+     
+    <p class="darksalmon">/*                                      *         * This Code Determines HOW to do it    *         *                                      */</p>
+  
+  <br/><br/>       
+  
+  
+
+      <p class="darksalmon slant-text">
+  </a>// This Code find the nearest freemine and sets myDir toward that direction //<br/><br> </p>    
+  
+  
+  <p class="gray-text">
+  if (task === &quot;freeMines&quot;) {<br/>    
+  var closestMine = bot.freeMines[0];<br/>        
+  
+  for (i = 0; i &lt; bot.freeMines.length; i++) {<br/>   
+  
+  
+  if (bot.findDistance(myPos, closestMine) &gt; bot.findDistance(myPos, bot.freeMines[i])) {<br/>   
+  closestMine = bot.freeMines[i];<br/>       
+  
+}<br/>            }<br/>            
+
+console.log(&quot;Claiming a Free Mine!&quot;);<br/>            myDir = bot.findPath(myPos, closestMine);<br/>        }<br/></p>
+
+This section of code tells the bot that if the task is "freeMines", it should search for the nearest mine by putting<br> all available mains in an array and going through each of the mines and finding which one is closest to the position<br> of the bot. This action is named "Claiming a Free Mine!" and the bot's direction is set toward the freeMine. 
+<br><br>
+
+<p class="darksalmon slant-text">
+ //this finds the nearest free tavern and sets my dir toward that direction// <br/></p>
+ 
+ <p class="gray-text">
+ if (task === &quot;taverns&quot;) {<br/>
+ var closestTavern = bot.taverns[0];<br/>
+ for (i = 0; i &lt; bot.taverns.length; i++) {<br/>
+ 
+ if (bot.findDistance(myPos, closestTavern) &gt; bot.findDistance(myPos, bot.taverns[i])) {<br/>                    closestTavern = bot.taverns[i];<br/>                }<br/>            }<br/><br/>            
+ console.log(&quot;Healing&quot;)<br/>            
+ myDir = bot.findPath(myPos, closestTavern)<br/>        }<br/></p>
+ 
+ 
+ This section tells the bot that if the task is taverns, to find the nearest tavern and go to it. All taverns on the map<br> are put into an array and all of them are surveyed to find which is closes to the bot's position. The action is named<br> "Healing" and the direction of the bot is set to the closest tavern. 
+ <br><br>
+ 
+ <p class="darksalmon slant-text">
+ //this code finds the nearest player and goes towards them to attack//<br/><br> </p>
+ 
+ <p class="gray-text">
+ if (task === &quot;hurtPeople&quot;) 
+ {<br/>            console.log(&quot;Kill!&quot;);<br/>            myDir = bot.findPath(myPos, closestEnemy.posArray);<br/>        }<br/>
+ 
+ </p>
+ 
+ The task is set to "hurtPeople" whenever an enemy is within a 4 unit range of the bot. when an enemy is<br> near, the bot's direction is set to the position of enemy and to attack
+ 
+ <br><br>
+ <p class="gray-text">
+  if (task === &quot;enemyMines&quot;) {<br/>            
+  var closestMine = enemyMines[0,1];<br/>            
+  for (i = 0; i &lt; enemyMines.length; i++) {<br/>                if (bot.findDistance(myPos, closestMine) &gt; 
+  findDistance(myPos, bot.enemyMines[i])) {<br/>                    closestMine = enemyMines[i];<br/>                }<br/>            }<br/>        }
+  </p>
+  
+  This code tells the bot when the task is "enemyMines", they have to find the closest mine that isn't already<br> in their possession and take it. All the enemy mines are put into an array and all of them are read to see which<br> one is closest to the bot's position. Then the bot's direction is set towards that enemy mine. This action is activated <br>either randomly or when no more free mines are available. 
+  
+  <br><br>
+          <p class="darksalmon">/*** This Code Sets your direction based on myDir.  If you are trying to go to a place that you can't reach, you move randomly.  *** /        
+          </p>
+          
+          <p class="darksalmon slant-text"><br/>        <br/>        
+          
+          //Sets the direction of your bot//<br/>        <br/>  
+          
+          </p>
+          
+          
+          <p class="gray-text">
+          if (myDir === &quot;none&quot;) {<br/>            console.log(&quot;Going Random!&quot;);<br/>            var rand = Math.floor(Math.random() * 4);<br/>            var dirs = [&quot;north&quot;, &quot;south&quot;, &quot;east&quot;, &quot;west&quot;];<br/>            bot.goDir = dirs[rand];<br/>        }<br/>        else {<br/>            bot.goDir = myDir;<br/>        }<br/>
+ </p>
+ 
+ Thise code sets the direction to random if the bot's direction isn't set by a task. It goes randomly north, south,<br> east, west until another task is assigned to it. 
+ 
+ </div>
+ 
+ <hr/>
+ 
+ <h1 class="darksalmon"> What I've Learned About AI </h1>
+ 
+ <div class = "modify">
+     
+     
+     <p class="gray-text"> 
+     My bot mostly does the tasks I've programmed it to do but it is difficult to control it all the time because sometimes it does not listen to the commands but other times it does. It was quite a complicated process trying to program it. I had no idea that other AI's were created by coding and I wonder how they work so well compared to mind which only works half the time.  
+     
+     
+     
+     </p>
+     
+     
+     
+     
+     
+ </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
